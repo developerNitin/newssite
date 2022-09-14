@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.subscribe-transition {
+		@apply translate-x-1 translate-y-1;
+	}
+}
