@@ -8,7 +8,7 @@ export default function App() {
 		<main className='max-w-[1920px] min-h-screen'>
 			<Header />
 			<Suspense fallback={<h1>Loading..</h1>}>
-				<LazyLayout>Body</LazyLayout>
+				{/* <LazyLayout>Body</LazyLayout> */}
 			</Suspense>
 		</main>
 	);

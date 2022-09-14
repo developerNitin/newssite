@@ -14,7 +14,7 @@ const NavItems = [
 
 export default function Header() {
 	return (
-		<header className='px-[50px]'>
+		<header className='px-[50px] bg-gray-100'>
 			<div className='flex py-[50px] gap-[90px] items-center'>
 				<div className='text-[50px] cursor-pointer'>
 					<figure>
@@ -22,13 +22,13 @@ export default function Header() {
 					</figure>
 				</div>
 				<div className='flex-[1.5] relative group'>
-					<figure className='absolute -left-10 -top-2 text-[30px]'>
+					<figure className='absolute -left-10 -top-1.5 text-[30px]'>
 						<button>
 							<FiSearch />
 						</button>
 					</figure>
 					<input
-						className='w-full outline-none'
+						className='w-full outline-none bg-transparent'
 						aria-label='Search'
 						type='text'
 						placeholder='SEARCH...'
@@ -36,33 +36,31 @@ export default function Header() {
 				</div>
 				<div className='text-6xl italic flex-[3]'>LOREM IPSUM</div>
 				<div className='flex-[2] flex items-center justify-end'>
-					<button className='mr-8 uppercase text-sm'>Sign in</button>
-					<div className='relative inline-block group hover:cursor-pointer w-32 h-12 uppercase text-sm'>
+					<button className='mr-8 uppercase'>Sign in</button>
+					<div className='button-styling-before'>
 						<div
-							className='border-2 border-black group-hover:subscribe-transition transition-all 
-                            duration-200 absolute top-0 left-0 w-full h-full bg-white flex items-center justify-center'
-							style={{ zIndex: "999" }}
+							className='button-styling'
 						>
 							Subscribe Now
 						</div>
-						<div className='absolute w-full h-full bg-black top-1 left-1' />
+						{/* <div className='button-styling-back'>Subscribe Now</div> */}
 					</div>
 				</div>
 			</div>
-			<nav className='flex justify-center gap-6 border-b-black uppercase text-xs'>
+			<nav className='flex justify-center gap-6 border-b-black uppercase text-sm'>
 				{NavItems.map(({ _id, name, href }) => (
 					<Link
 						to={href}
 						key={_id}
 						className={`block ${
-							_id === "-nav-item-1" && "border-b-4 border-b-black pb-2"
+							_id === "-nav-item-1" && "border-b-[6px] border-b-black pb-2"
 						}`}
 					>
 						{name}
 					</Link>
 				))}
 			</nav>
-			<div className='w-full h-[1px] bg-black -translate-y-[2px]' />
+			<div className='w-full h-[1px] bg-black -translate-y-[3.5px]' />
 		</header>
 	);
 }
