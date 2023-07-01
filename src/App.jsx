@@ -12,7 +12,7 @@ const LazyTravel = lazy(() => import("./components/travel"));
 
 export default function App() {
   return (
-    <main className="max-w-[1920px] min-h-screen bg-gray-100">
+    <main className="max-w-[1920px] min-h-screen bg-gray-100 font-[RobotoSlab]">
       <Header />
       <Suspense fallback={<h1>Loading..</h1>}>
         <Layout>

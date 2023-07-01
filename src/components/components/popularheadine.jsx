@@ -2,7 +2,7 @@ import { AiOutlineLine } from "react-icons/ai";
 import { RiArrowDropRightLine, RiArrowDropLeftLine } from "react-icons/ri";
 
 export default function PopularHeadine({ Classes, data }) {
-  // console.log(data[1])
+
   return (
     <div className={`mb-[60px] last:mb-0 ${Classes[0]}`}>
       <div className="flex items-center mb-[50px]">
@@ -10,36 +10,44 @@ export default function PopularHeadine({ Classes, data }) {
         <hr className="flex-1 border-[#A2A2A2]" />
       </div>
       <div className="flex overflow-scroll hide-scrollbar ">
-        {data.map((NewsItem, idx) => (
+        {[data].map((NewsItem, idx) => (
           <div key={idx} className="flex-shrink-0 max-w-full">
             {NewsItem.map((i, idx) => (
               <div key={idx} className="">
                 <div className=" sm:flex relative z-10 mb-[60px]">
                   <figure
-                    className={`flex-[2] h-[50vh] bg-white border mr-[11px] sm:mr-[50px] mb-[50px]  sm:mb-[0] border-black relative 
+                    className={` sm:h-[50vh] bg-white border mr-[11px] sm:mr-[50px] mb-[50px] sm:mb-[0] sm:w-[50%] border-black relative 
                     before:absolute before:-z-[1] before:w-full before:h-full before:top-3 before:left-3 
                     before:bg-transparent before:border before:border-black ${
                       (idx & 1) !== 0 && "order-2 sm:mr-[12px]"
                     }`}
-                  /> 
+                  >
+                    <div className="sm:h-[50vh] overflow-hidden flex justify-center items-center">
+                      <img className="sm:h-[50vh] sm:max-w-none " src={i.urlToImage} />
+                    </div>
+                  </figure>
                   <div
-                    className={`flex-[2] ${
+                    className={` ${
                       (idx & 1) !== 0 && "order-1 mr-[50px]"
                     }`}
                   >
                     <p
                       className={`text-[20px] flex items-center mb-[30px] ${Classes[1]}`}
                     >
-                      <span className="mr-[15px]">{i.auther}</span>
+                      <span className="mr-[15px]">
+                        {i.author || i.source.name}
+                      </span>
                       <AiOutlineLine className="mr-[15px]" />
-                      <span>{i.date}</span>
+                      <span>{i.publishedAt.slice(0, 10)}</span>
                     </p>
                     <h1
                       className={`text-[26px] font-bold mb-[30px] cursor-pointer hover:underline ${Classes[2]}`}
                     >
-                      {i.heading}
+                      {i.title}
                     </h1>
-                    <p className={`text-[20px] ${Classes[1]}`}>{i.brief}</p>
+                    <p className={`text-[20px] ${Classes[1]}`}>
+                      {i.description}
+                    </p>
                   </div>
                 </div>
               </div>

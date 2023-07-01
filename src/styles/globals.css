@@ -3,39 +3,43 @@
 @tailwind utilities;
 
 @layer components {
-	.subscribe-transition {
-		@apply translate-x-1 translate-y-1;
-	}
-	.button-styling {
-		@apply border-2 px-6 py-3 border-black hover:subscribe-transition transition-all 
+  .subscribe-transition {
+    @apply translate-x-1 translate-y-1;
+  }
+  .button-styling {
+    @apply border-2 px-6 py-3 border-black hover:subscribe-transition transition-all 
 	duration-200 relative top-0 left-0 bg-white flex items-center justify-center z-[999];
-	}
+  }
 
-	.button-styling-before {
-		@apply relative inline-block hover:cursor-pointer uppercase 
+  .button-styling-before {
+    @apply relative inline-block hover:cursor-pointer uppercase 
 	text-base before:absolute before:bg-black before:top-1 before:left-1 before:w-full before:h-full;
-	}
-	/* .button-styling-back {
+  }
+  /* .button-styling-back {
     @apply absolute px-6 py-3 w-full h-full bg-black top-1 left-1 -z-[1];
   } */
 }
 
+@font-face {
+  font-family: "RobotoSlab";
+  src: url("../assets/font/RobotoSlab-VariableFont_wght.ttf");
+}
+
 .hide-scrollbar::-webkit-scrollbar {
-	display: none;
+  display: none;
 }
 
 .newsLayoutCard {
-	position: relative;
-	z-index: 99;
+  position: relative;
+  z-index: 99;
 }
 
 .newsLayoutCard::before {
-	position: absolute;
-	z-index: 9;
+  position: absolute;
+  z-index: 9;
 }
 
 .no-scroll {
-	height: 100%;
-	overflow: hidden;
+  height: 100%;
+  overflow: hidden;
 }
-
