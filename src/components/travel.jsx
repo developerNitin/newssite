@@ -12,7 +12,7 @@ export default function Travel() {
 
   return (
     <>
-      <HotHeadline data = {OtherNewsData[0]} />
+      <HotHeadline  data = {OtherNewsData[0]} />
       <PopularHeadine Classes = {Classes} data={OtherNewsData[1]}></PopularHeadine>
       <NewsLayout data = {OtherNewsData[2]}/>
     </>
