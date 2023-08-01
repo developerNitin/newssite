@@ -1,9 +1,9 @@
 import PopularHeadine from "./components/popularheadine";
 import NewsLayout from "./components/newsLayout";
-import { AiOutlineLine } from "react-icons/ai";
-import trendingNew from "../../trendingNews.json";
+// import { AiOutlineLine } from "react-icons/ai";
+// import trendingNew from "../../trendingNews.json";
 // import axios from "axios";
-import NewsPage from "./newsPage";
+// import NewsPage from "./newsPage";
 
 import Banner from "./components/homeBanner";
 
